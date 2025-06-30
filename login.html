@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artheesh-Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body style="background-color: #E3FDFD; margin: 0; font-family: 'Poppins', sans-serif;">
+
+    <div class="login_main">
+        <div class="login_image">
+            <img src="./assets/hero_image.png" height="500px" alt="login_image">
+        </div>
+
+        <div class="login_text">
+            <div class="login_title">Login</div>
+            <form class="login_form" onsubmit="validate(); return false;">
+                <label for="uname">Username</label>
+                <input type="text" id="uname" name="uname" placeholder="Enter Username" required>
+
+                <label for="psw">Password</label>
+                <input type="password" id="psw" name="psw" placeholder="Enter Password" required>
+
+                <div class="checkbox_row">
+                    <input type="checkbox" id="remember" name="remember" checked>
+                    <label for="remember">Remember me</label>
+                </div>
+
+                <button type="submit">Login</button>
+                <button type="button" class="cancelbtn" onclick="location.href='./login.html'">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="./login.js"></script>
+</body>
+</html>

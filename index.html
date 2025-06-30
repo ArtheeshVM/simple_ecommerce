@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artheesh</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+</head>
+<body style="background-color: #E3FDFD; margin: 0; font-family: 'Poppins', sans-serif;">
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="name" onclick="location.href='./index.html'">Artheesh</div>
+    <div class="search_bar">
+      <input type="text" placeholder="Search" class="search" id="searchInput">
+      <button type="submit" class="button_search"><i class="fa fa-search" style="color: #333;"></i></button>
+    </div>
+    
+    <div class="button">
+        <div class="Logout"><button onclick="location.href='./login.html'">Logout</button></div>
+        <a href="./cart.html" class="cart_button">
+            <i class="fa fa-shopping-cart" style="font-size:24px; color: black;"></i>
+        </a>
+    </div>
+    
+  </div>
+
+  <!-- Product Section -->
+  <div class="products" style="margin-top: 80px;">
+    <div class="product_title">Featured Products</div>
+    <div class="products_list">
+      <div class="product_image">
+        <div class="product_pic">
+          <img class="img_tag" src="./assets/product_1.png" alt="product_1">
+        </div>
+        <div class="product_text">
+          <div class="product_description">Beautiful Black Jacket</div>
+          <div class="product_price">₹1999</div>
+          <div class="product_button">
+            <button class="cart" onclick="addToCart('Beautiful Black Jacket', 1999, './assets/product_1.png')">Add to cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product_image">
+        <div class="product_pic">
+          <img class="img_tag" src="./assets/product_13.png" alt="product_1">
+        </div>
+        <div class="product_text">
+          <div class="product_description">Beautiful Green Jacket</div>
+          <div class="product_price">₹1899</div>
+          <div class="product_button">
+            <button class="cart" onclick="addToCart('Beautiful Green Jacket', 1899, './assets/product_13.png')">Add to cart</button>
+
+          </div>
+        </div>
+      </div>
+      <div class="product_image">
+        <div class="product_pic">
+          <img class="img_tag" src="./assets/product_14.png" alt="product_1">
+        </div>
+        <div class="product_text">
+          <div class="product_description">Beautiful Navy Blue Jacket</div>
+          <div class="product_price">₹1999</div>
+          <div class="product_button">
+            <button class="cart" onclick="addToCart('Beautiful Navy Blue Jacket', 1999, './assets/product_14.png')">Add to cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="product_image">
+        <div class="product_pic">
+          <img class="img_tag" src="./assets/product_15.png" alt="product_1">
+        </div>
+        <div class="product_text">
+          <div class="product_description">Beautiful Pattern Jacket</div>
+          <div class="product_price">₹1499</div>
+          <div class="product_button">
+            <button class="cart" onclick="addToCart('Beautiful Pattern Jacket', 1499, './assets/product_15.png')">Add to cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="product_image">
+        <div class="product_pic">
+          <img class="img_tag" src="./assets/product_18.png" alt="product_1">
+        </div>
+        <div class="product_text">
+          <div class="product_description">Beautiful Grey Jacket</div>
+          <div class="product_price">₹999</div>
+          <div class="product_button">
+            <button class="cart" onclick="addToCart('Beautiful Grey Jacket', 999, './assets/product_18.png')">Add to cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="product_image">
+        <div class="product_pic">
+          <img class="img_tag" src="./assets/product_2.png" alt="product_1">
+        </div>
+        <div class="product_text">
+          <div class="product_description">Beautiful Pink Top</div>
+          <div class="product_price">₹799</div>
+          <div class="product_button">
+            <button class="cart" onclick="addToCart('Beautiful Pink Top', 1999, './assets/product_2.png')">Add to cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="product_image">
+        <div class="product_pic">
+          <img class="img_tag" src="./assets/product_29.png" alt="product_1">
+        </div>
+        <div class="product_text">
+          <div class="product_description">Kid's Jacket</div>
+          <div class="product_price">₹999</div>
+          <div class="product_button">
+            <button class="cart" onclick="addToCart('Kid\'s Jacket', 999, './assets/product_29.png')">Add to cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="product_image">
+        <div class="product_pic">
+          <img class="img_tag" src="./assets/product_5.png" alt="product_1">
+        </div>
+        <div class="product_text">
+          <div class="product_description">Beautiful Top</div>
+          <div class="product_price">₹1299</div>
+          <div class="product_button">
+            <button class="cart" onclick="addToCart('Beautiful Top', 1299, './assets/product_5.png')">Add to cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="product_image">
+        <div class="product_pic">
+          <img class="img_tag" src="./assets/product_4.png" alt="product_1">
+        </div>
+        <div class="product_text">
+          <div class="product_description">Beautiful Meroon Top</div>
+          <div class="product_price">₹1299</div>
+          <div class="product_button">
+            <button class="cart" onclick="addToCart('Beautiful Meroon Top', 1299, './assets/product_4.png')">Add to cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="product_image">
+        <div class="product_pic">
+          <img class="img_tag" src="./assets/product_6.png" alt="product_1">
+        </div>
+        <div class="product_text">
+          <div class="product_description">Beautiful Brown Top</div>
+          <div class="product_price">₹699</div>
+          <div class="product_button">
+            <button class="cart" onclick="addToCart('Beautiful Brown Top', 699, './assets/product_6.png')">Add to cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="product_image">
+        <div class="product_pic">
+          <img class="img_tag" src="./assets/product_7.png" alt="product_1">
+        </div>
+        <div class="product_text">
+          <div class="product_description">Beautiful White Top</div>
+          <div class="product_price">₹899</div>
+          <div class="product_button">
+            <button class="cart" onclick="addToCart('Beautiful White Top', 899, './assets/product_7.png')">Add to cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="product_image">
+        <div class="product_pic">
+          <img class="img_tag" src="./assets/product_8.png" alt="product_1">
+        </div>
+        <div class="product_text">
+          <div class="product_description">Beautiful Pattern Top</div>
+          <div class="product_price">₹1299</div>
+          <div class="product_button">
+            <button class="cart" onclick="addToCart('Beautiful Pattern Top', 1299, './assets/product_8.png')">Add to cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="product_image">
+        <div class="product_pic">
+          <img class="img_tag" src="./assets/product_20.png" alt="product_1">
+        </div>
+        <div class="product_text">
+          <div class="product_description">Beautiful Blue Jacket</div>
+          <div class="product_price">₹1499</div>
+          <div class="product_button">
+            <button class="cart" onclick="addToCart('Beautiful Blue Jacket', 1499, './assets/product_20.png')">Add to cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="product_image">
+        <div class="product_pic">
+          <img class="img_tag" src="./assets/product_21.png" alt="product_1">
+        </div>
+        <div class="product_text">
+          <div class="product_description">Beautiful Red Jerkin</div>
+          <div class="product_price">₹999</div>
+          <div class="product_button">
+            <button class="cart" onclick="addToCart('Beautiful Red Jerkin', 999, './assets/product_21.png')">Add to cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="product_image">
+        <div class="product_pic">
+          <img class="img_tag" src="./assets/product_22.png" alt="product_1">
+        </div>
+        <div class="product_text">
+          <div class="product_description">Beautiful White Hoodie</div>
+          <div class="product_price">₹1099</div>
+          <div class="product_button">
+            <button class="cart" onclick="addToCart('Beautiful White Hoodie', 1099, './assets/product_22.png')">Add to cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="product_image">
+        <div class="product_pic">
+          <img class="img_tag" src="./assets/product_23.png" alt="product_1">
+        </div>
+        <div class="product_text">
+          <div class="product_description">Beautiful Yellow Jerkin</div>
+          <div class="product_price">₹1599</div>
+          <div class="product_button">
+            <button class="cart" onclick="addToCart('Beautiful Yellow Jerkin', 1599, './assets/product_23.png')">Add to cart</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="./index.js"></script>
+
+</body>
+</html>

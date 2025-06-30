@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Artheesh-cart</title>
+  <link rel="stylesheet" href="./cart.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+</head>
+<body style="background-color: #E3FDFD; margin: 0; font-family: 'Poppins', sans-serif;">
+  
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="name" onclick="location.href='./index.html'">Artheesh</div>
+    <div class="search_bar">
+      <input type="text" placeholder="Search" class="search" />
+      <button type="submit" class="button_search"><i class="fa fa-search"></i></button>
+    </div>
+    <div class="button">
+      <div class="home" onclick="location.href='./index.html'">Home</div>
+      <div class="Logout"><button onclick="location.href='./login.html'">Logout</button></div>
+    </div>
+  </div>
+
+  <!-- Cart -->
+  <div class="cart_main" style="margin-top: 70px;">
+    <div class="cart_title">Welcome to Cart</div>
+    <div id="cart-container"></div>
+    <div id="cart-total" style="margin-top: 20px; font-size: 20px; font-weight: bold; text-align: right;"></div>
+    <div class="checkout-container" style="text-align: center; margin: 40px 0;">
+      <button class="checkout-button" onclick="proceedToCheckout()">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <script>
+    function renderCart() {
+  const cartContainer = document.getElementById("cart-container");
+  const cartTotalContainer = document.getElementById("cart-total");
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  if (cart.length === 0) {
+    cartContainer.innerHTML = `<p style="text-align: center; font-size: 18px; color: #555;">Your cart is empty.</p>`;
+    cartTotalContainer.innerHTML = '';
+    return;
+  }
+
+  cartContainer.innerHTML = '';
+  
+  let totalPrice = 0; 
+
+  cart.forEach((item, index) => {
+    const itemDiv = document.createElement("div");
+    itemDiv.style.marginBottom = "20px";
+    itemDiv.style.borderBottom = "1px solid #ccc";
+    itemDiv.style.paddingBottom = "10px";
+
+    itemDiv.innerHTML = `
+      <img src="${item.image}" alt="${item.name}" width="100" />
+      <p><strong>${item.name}</strong></p>
+      <p>Price: ₹${item.price}</p>
+      <p>Quantity: ${item.quantity}</p>
+      <button class="remove-button" onclick="removeFromCart(${index})">Remove</button>
+    `;
+
+    cartContainer.appendChild(itemDiv);
+
+    totalPrice += item.price * item.quantity;
+  });
+
+  cartTotalContainer.innerHTML = `Total: ₹${totalPrice.toFixed(2)}`;
+}
+
+
+  function removeFromCart(index) {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    if (cart[index].quantity > 1) {
+      cart[index].quantity -= 1;
+   } else {
+     cart.splice(index, 1); 
+   }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  renderCart();
+}
+function proceedToCheckout(){
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];  
+ if(cart.length===0){
+  alert("Your cart is empty please add some products!");
+ }
+ else{
+   alert("Thanks for Purchasing..!");
+  localStorage.removeItem("cart");
+  renderCart();
+ }
+  // window.location.href='./checkOut.html';
+}
+
+    window.onload = renderCart;
+  </script>
+</body>
+</html>
